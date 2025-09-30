@@ -160,8 +160,8 @@ def make_prompt(project_name: str, hypothesis_id: str | None = None, config: dic
     
     # Load project data
     from pathlib import Path
-    home_dir = Path.home()
-    project_dir = home_dir / f".hound/projects/{project_name}"
+    # home_dir = Path.home()
+    project_dir = Path.cwd() / f".hound/projects/{project_name}"
     if not project_dir.exists():
         console.print(f"[red]Project '{project_name}' not found[/red]")
         sys.exit(1)
@@ -279,8 +279,8 @@ def import_poc(project_name: str, hypothesis_id: str, files: list[str], descript
     """Import PoC files for a specific hypothesis"""
     
     # Load project data
-    home_dir = Path.home()
-    project_dir = home_dir / f".hound/projects/{project_name}"
+    # home_dir = Path.home()
+    project_dir = Path.cwd() / f".hound/projects/{project_name}"
     if not project_dir.exists():
         console.print(f"[red]Project '{project_name}' not found[/red]")
         sys.exit(1)
@@ -391,8 +391,8 @@ def import_poc(project_name: str, hypothesis_id: str, files: list[str], descript
 def list_pocs(project_name: str):
     """List all PoCs for a project"""
     
-    home_dir = Path.home()
-    project_dir = home_dir / f".hound/projects/{project_name}"
+    # home_dir = Path.home()
+    project_dir = Path.cwd() / f".hound/projects/{project_name}"
     if not project_dir.exists():
         console.print(f"[red]Project '{project_name}' not found[/red]")
         sys.exit(1)

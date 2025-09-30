@@ -69,7 +69,7 @@ def _validate_required_models(config: dict | None, console: Console) -> bool:
 
 def get_project_dir(project_id: str) -> Path:
     """Get project directory path."""
-    return Path.home() / ".hound" / "projects" / project_id
+    return Path.cwd() / ".hound" / "projects" / project_id
 
 def run_investigation(project_path: str, prompt: str, iterations: int | None = None, config_path: Path | None = None, debug: bool = False, platform: str | None = None, model: str | None = None):
     """Run a user-driven investigation."""

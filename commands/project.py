@@ -25,7 +25,8 @@ class ProjectManager:
     """Manages Hound projects."""
     
     def __init__(self):
-        self.projects_dir = Path.home() / ".hound" / "projects"
+        self.projects_dir = Path.cwd() / ".hound" / "projects"
+        print('use projects dir:', self.projects_dir)
         self.projects_dir.mkdir(parents=True, exist_ok=True)
         self.registry_file = self.projects_dir / "registry.json"
         self._ensure_registry()

@@ -5,6 +5,7 @@ __pycache__
 *.pyc
 .hound_cache
 .hound_debug
+.hound
 graph_results
 config.yaml
 htmlcov/

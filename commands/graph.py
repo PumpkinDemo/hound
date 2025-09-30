@@ -71,7 +71,7 @@ def build(
     config = load_config(config_path)
     
     # Enforce project id usage and resolve project directories
-    project_dir = Path.home() / '.hound' / 'projects' / project_id
+    project_dir = Path.cwd() / '.hound' / 'projects' / project_id
     if not project_dir.exists():
         console.print(f"[red]Error: Project '{project_id}' not found under ~/.hound/projects/[/red]")
         raise typer.Exit(code=2)
@@ -534,7 +534,7 @@ def custom(
     config = load_config(config_path)
 
     # Resolve project directory and repo path
-    project_dir = Path.home() / '.hound' / 'projects' / project_id
+    project_dir = Path.cwd() / '.hound' / 'projects' / project_id
     if not project_dir.exists():
         console.print(f"[red]Error: Project '{project_id}' not found under ~/.hound/projects/[/red]")
         raise typer.Exit(code=2)
